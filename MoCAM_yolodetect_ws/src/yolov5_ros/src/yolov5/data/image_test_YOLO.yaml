@@ -1,0 +1,9 @@
+names:
+- yellow
+- red
+- green
+nc: 3
+path: /home/zhaowei/yolov5/image_test_YOLO_dataset/images1/train
+test: ''
+train: /home/zhaowei/yolov5/image_test_YOLO_dataset/images1/train
+val: /home/zhaowei/yolov5/image_test_YOLO_dataset/images1/train
