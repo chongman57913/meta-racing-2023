@@ -46,12 +46,12 @@ vim ~/.bashrc
 ```bash
 # For ROS & Carla-ROS-Bridge
 source /opt/ros/noetic/setup.bash
-source $REPO_PATH/MoCAM_carla-ros-bridge/catkin_ws/devel/setup.bash
+source ~/MoCAM_carla-ros-bridge/catkin_ws/devel/setup.bash
 
 # For MoCAM demo
-source $REPO_PATH/MoCAM_pt2laserscan_ws/devel/setup.bash
-source $REPO_PATH/MoCAM_yolodetect_ws/devel/setup.bash
-source $REPO_PATH/MoCAM_MPC_ROS_ws/devel/setup.bash
+source ~/MoCAM_pt2laserscan_ws/devel/setup.bash
+source ~/MoCAM_yolodetect_ws/devel/setup.bash
+source ~/MoCAM_MPC_ROS_ws/devel/setup.bash
 ```
 
 ### Reload .bashrc 
