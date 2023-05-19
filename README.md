@@ -21,21 +21,23 @@ sudo apt install ros-noetic-tf2-sensor-msgs
 
 ## Build ROS projects for MoCAM demo
 ```bash
+export REPO_PATH=/path/to/repo_folder
+
 # Build all the projects in the repo
 
-cd /path/to/repo_folder/MoCAM_carla-ros-bridge/catkin_ws
+cd $REPO_PATH/MoCAM_carla-ros-bridge/catkin_ws
 catkin_make
 source devel/setup.bash
 
-cd /path/to/repo_folder/MoCAM_pt2laserscan_ws
+cd $REPO_PATH/MoCAM_pt2laserscan_ws
 catkin_make
 source devel/setup.bash
 
-cd /path/to/repo_folder/MoCAM_yolodetect_ws
+cd $REPO_PATH/MoCAM_yolodetect_ws
 catkin_make
 source devel/setup.bash
 
-cd /path/to/repo_folder/MoCAM_MPC_ROS_ws
+cd $REPO_PATH/MoCAM_MPC_ROS_ws
 catkin_make
 source devel/setup.bash
 ```
@@ -50,16 +52,16 @@ vim ~/.bashrc
 ```bash
 # For ROS & Carla-ROS-Bridge
 source /opt/ros/noetic/setup.bash
-source /path/to/ros_bridge/carla-ros-bridge/catkin_ws/devel/setup.bash
+source $REPO_PATH/MoCAM_carla-ros-bridge/catkin_ws/devel/setup.bash
 
 # For MoCAM demo
-source /path/to/repo_folder/MoCAM_pt2laserscan_ws/devel/setup.bash
-source /path/to/repo_folder/MoCAM_yolodetect_ws/devel/setup.bash
-source /path/to/repo_folder/MoCAM_MPC_ROS_ws/devel/setup.bash
+source $REPO_PATH/MoCAM_pt2laserscan_ws/devel/setup.bash
+source $REPO_PATH/MoCAM_yolodetect_ws/devel/setup.bash
+source $REPO_PATH/MoCAM_MPC_ROS_ws/devel/setup.bash
 ```
 ### Modify the model checkpoint path for Yolo object detector
 ```xml
-<!-- Modify the setting in /path/to/repo_folder/MoCAM_yolodetect_ws/src/yolov5_ros/launch/yolov5.launch -->
+<!-- Modify the setting in $REPO_PATH/MoCAM_yolodetect_ws/src/yolov5_ros/launch/yolov5.launch -->
 
 <arg name="weights" default="/path/to/yolo_checkpoint_folder/checkpoint_name.pt"/>
 ```
@@ -95,6 +97,9 @@ roslaunch carla_ros_bridge run_car_sim_Town04.launch
 rosrun mpc_ros mpc_Town04_launch.py 
 ```
 
+## Train a YOLO v5 object detection model
+to be updated
+
 ## Tips for debugging
 ### Enable RVIZ
 RVIZ is a ROS GUI that allows you to visualize a lot of information and helps debugging in your implementation. You can enable it by adding the following code in the ROS launch file.
@@ -102,7 +107,7 @@ RVIZ is a ROS GUI that allows you to visualize a lot of information and helps de
 ```xml
 <!-- 
     The launch file is located at: 
-    /path/to/repo_folder/MoCAM_carla-ros-bridge/catkin_ws/src/ros-bridge/carla_ros_bridge/launch/run_car_sim_Town04.launch
+    $REPO_PATH/MoCAM_carla-ros-bridge/catkin_ws/src/ros-bridge/carla_ros_bridge/launch/run_car_sim_Town04.launch
 -->
 
 <node name="rviz" pkg="rviz" type="rviz" args="-d $(find carla_ros_bridge)/rviz/mpc.rviz"/>
@@ -113,13 +118,16 @@ There is a built-in manual control for vehicles in CARLA. You can control your c
 ```xml
 <!-- 
     The launch file is located at: 
-    /path/to/repo_folder/MoCAM_carla-ros-bridge/catkin_ws/src/ros-bridge/carla_ros_bridge/launch/run_car_sim_Town04.launch
+    $REPO_PATH/MoCAM_carla-ros-bridge/catkin_ws/src/ros-bridge/carla_ros_bridge/launch/run_car_sim_Town04.launch
 -->
 
   <include file="$(find carla_manual_control)/launch/carla_manual_control.launch" unless="$(arg auto_control)">
   <arg name='role_name' value='agent_0'/>
   </include>
 ```
+
+### Generate pedestrian and vehicle in CARLA world
+to be updated
 
 
 ## Tools for evulation (update later)
