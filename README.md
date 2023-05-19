@@ -10,7 +10,7 @@ This is a repo of a autonomous driving beaseline in CARLA for the competition.
 
 - **Pytorch (version 1.13 or later)**: https://pytorch.org/get-started/locally/
 
-- **MoCAM CARLA map**: https://google.com (update later)
+- **MoCAM CARLA map**: https://go.um.edu.mo/1b0q464z (password: Um@853)
 
 ## Install python and ROS package dependency
 ```bash
