@@ -21,25 +21,19 @@ sudo apt install ros-noetic-tf2-sensor-msgs
 
 ## Build ROS projects for MoCAM demo
 ```bash
-export REPO_PATH=/path/to/repo_folder
-
 # Build all the projects in the repo
 
-cd $REPO_PATH/MoCAM_carla-ros-bridge/catkin_ws
-catkin_make
-source devel/setup.bash
+cd ~/MoCAM_carla-ros-bridge/catkin_ws
+catkin_make && source devel/setup.bash
 
-cd $REPO_PATH/MoCAM_pt2laserscan_ws
-catkin_make
-source devel/setup.bash
+cd ~/MoCAM_pt2laserscan_ws
+catkin_make && source devel/setup.bash
 
-cd $REPO_PATH/MoCAM_yolodetect_ws
-catkin_make
-source devel/setup.bash
+cd ~/MoCAM_yolodetect_ws
+catkin_make && source devel/setup.bash
 
-cd $REPO_PATH/MoCAM_MPC_ROS_ws
-catkin_make
-source devel/setup.bash
+cd ~/MoCAM_MPC_ROS_ws
+catkin_make && source devel/setup.bash
 ```
 
 ## Load variable for ROS projects 
@@ -59,18 +53,25 @@ source $REPO_PATH/MoCAM_pt2laserscan_ws/devel/setup.bash
 source $REPO_PATH/MoCAM_yolodetect_ws/devel/setup.bash
 source $REPO_PATH/MoCAM_MPC_ROS_ws/devel/setup.bash
 ```
+
+### Reload .bashrc 
+```bash
+source ~/.bashrc
+```
+
 ### Modify the model checkpoint path for Yolo object detector
 ```xml
-<!-- Modify the setting in $REPO_PATH/MoCAM_yolodetect_ws/src/yolov5_ros/launch/yolov5.launch -->
+<!-- Modify the setting in ~/MoCAM_yolodetect_ws/src/yolov5_ros/launch/yolov5.launch -->
 
 <arg name="weights" default="/path/to/yolo_checkpoint_folder/checkpoint_name.pt"/>
 ```
 
 ## Run Carla map
 ``` bash
-cd /path/to/carla_map_folder
+cd $CARLA_ROOT
 ./CarlaUE4.sh
 ```
+CARLA_ROOT is the root folder for CARLA
 
 ## Start ROS core service in a new terminal window
 ```bash
@@ -107,7 +108,7 @@ RVIZ is a ROS GUI that allows you to visualize a lot of information and helps de
 ```xml
 <!-- 
     The launch file is located at: 
-    $REPO_PATH/MoCAM_carla-ros-bridge/catkin_ws/src/ros-bridge/carla_ros_bridge/launch/run_car_sim_Town04.launch
+    ~/MoCAM_carla-ros-bridge/catkin_ws/src/ros-bridge/carla_ros_bridge/launch/run_car_sim_Town04.launch
 -->
 
 <node name="rviz" pkg="rviz" type="rviz" args="-d $(find carla_ros_bridge)/rviz/mpc.rviz"/>
@@ -118,7 +119,7 @@ There is a built-in manual control for vehicles in CARLA. You can control your c
 ```xml
 <!-- 
     The launch file is located at: 
-    $REPO_PATH/MoCAM_carla-ros-bridge/catkin_ws/src/ros-bridge/carla_ros_bridge/launch/run_car_sim_Town04.launch
+    ~/MoCAM_carla-ros-bridge/catkin_ws/src/ros-bridge/carla_ros_bridge/launch/run_car_sim_Town04.launch
 -->
 
   <include file="$(find carla_manual_control)/launch/carla_manual_control.launch" unless="$(arg auto_control)">
