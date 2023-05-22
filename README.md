@@ -66,7 +66,8 @@ source ~/.bashrc
 
 ### Modify the model checkpoint path for Yolo object detector
 To obtain a pre-train checkpoint of YOLOv5, please check on [the official Github](https://github.com/ultralytics/yolov5).
-If you would like to train a YOLOv5 by yourself, please refer to the section below.
+
+If you would like to train a YOLOv5 model by yourself, please refer to the [section](#train-a-yolo-v5-object-detection-model) below.
 ```xml
 <!-- Modify the setting in ~/MoCAM_yolodetect_ws/src/yolov5_ros/launch/yolov5.launch -->
 
