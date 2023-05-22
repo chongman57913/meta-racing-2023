@@ -4,6 +4,8 @@ This is a repo of a autonomous driving beaseline in CARLA for the competition.
 ## System Dependency
 - **System requirement**: Ubuntu 20.04
 
+- **Python**: Python 3.8
+
 - **ROS (Noetic)**: http://wiki.ros.org/noetic/Installation/Ubuntu
 
 - **CARLA**:https://carla.readthedocs.io/en/latest/start_quickstart/
@@ -14,9 +16,9 @@ This is a repo of a autonomous driving beaseline in CARLA for the competition.
 
 ## Install python and ROS package dependency
 ```bash
-pip install carla, transforms3d, cvxpy
+pip install transforms3d cvxpy opencv-python pandas Pillow requests seaborn matplotlib
 
-sudo apt install ros-noetic-tf2-sensor-msgs
+sudo apt install ros-noetic-tf2-sensor-msgs ros-noetic-ackermann-msgs ros-noetic-derived-object-msgs  ros-noetic-vision-msgs
 ```
 
 ## Build ROS projects for MoCAM demo
@@ -52,6 +54,9 @@ source ~/MoCAM_carla-ros-bridge/catkin_ws/devel/setup.bash
 source ~/MoCAM_pt2laserscan_ws/devel/setup.bash
 source ~/MoCAM_yolodetect_ws/devel/setup.bash
 source ~/MoCAM_MPC_ROS_ws/devel/setup.bash
+
+# Configure the path of the CARLA map folder
+export CARLA_ROOT="/path/to/CARLA map/folder"
 ```
 
 ### Reload .bashrc 
@@ -60,6 +65,8 @@ source ~/.bashrc
 ```
 
 ### Modify the model checkpoint path for Yolo object detector
+To obtain a pre-train checkpoint of YOLOv5, please check on [the official Github](https://github.com/ultralytics/yolov5).
+If you would like to train a YOLOv5 by yourself, please refer to the section below.
 ```xml
 <!-- Modify the setting in ~/MoCAM_yolodetect_ws/src/yolov5_ros/launch/yolov5.launch -->
 
