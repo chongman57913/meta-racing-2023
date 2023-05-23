@@ -16,6 +16,8 @@ This is a repo of a autonomous driving beaseline in CARLA for the competition.
 
 ## Install python and ROS package dependency
 ```bash
+pip install carla==0.9.13
+
 pip install transforms3d cvxpy opencv-python pandas Pillow requests torch torchvision seaborn matplotlib
 
 sudo apt install ros-noetic-tf2-sensor-msgs ros-noetic-ackermann-msgs ros-noetic-derived-object-msgs  ros-noetic-vision-msgs
