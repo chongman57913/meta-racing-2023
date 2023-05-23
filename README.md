@@ -4,7 +4,7 @@ This is a repo of a autonomous driving beaseline in CARLA for the competition.
 ## System Dependency
 - **System requirement**: Ubuntu 20.04
 
-- **Python**: Python 3.8
+- **Python**: Python 3.8(Currently does not support python3.9 or above)
 
 - **ROS (Noetic)**: http://wiki.ros.org/noetic/Installation/Ubuntu
 
