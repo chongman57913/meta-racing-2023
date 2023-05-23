@@ -38,6 +38,51 @@ roslaunch yolov5_ros yolov5.launch
 * Put the yaml file for your dataset classes into `yolov5_ros/src/yolov5/data`
 * Change related ROS parameters in yolov5.launch: `weights`,  `data`
 
+## Train a YOLOv5 model in MoCAM
+
+### Data collection
+To train an object detection model, first we need to prepare an annotated dataset. You can run the script to collect image from the camera from the vehicle. 
+
+```bash
+# Please ensure the vehicle entity is added in the CARLA world
+
+python image_collector.py /path/to/the/image/folder/
+```
+
+### Data annotation
+After preparing the image set, we have to annotate the object in the image. [https://github.com/heartexlabs/labelImg]() is a tool for data annotation, and you can find how to use the tool by watching the [demo video](https://www.youtube.com/watch?v=zSda1AoUTkc).
+```bash
+git clone https://github.com/heartexlabs/labelImg
+
+# Run the labelImg tools and choose YOLO as annotation format
+./labelImg/labelImg
+```
+
+### Train the model using the annotated dataset
+To define the details of the training dataset, we have to create a yaml file to declears 1) the dataset root directory path and relative paths to train / val / test image directories, and 2) a class names dictionary.
+
+```yaml
+path: /path/to/image_dataset/root  # dataset root dir
+train: images/train  # train images (relative to 'path') 
+val: images/val # val images (relative to 'path')
+test:  # test images (optional)
+
+# Classes
+names:
+  0: red
+  1: yellow
+  2: green
+  3: pedestrian
+  #......
+```
+
+Then we can train a YOLOv5s model with a specific training dataset.
+
+```bash
+cd ~/yolov5
+python train.py --data image_test_YOLO.yaml --weights yolov5s.pt --img 640
+```
+
 ## Reference
 * YOLOv5 official repository: https://github.com/ultralytics/yolov5
 * YOLOv3 ROS PyTorch: https://github.com/eriklindernoren/PyTorch-YOLOv3
