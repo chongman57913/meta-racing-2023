@@ -89,7 +89,7 @@ If you would like to train a YOLOv5 model by yourself, please refer to the [sect
 cd $CARLA_ROOT
 ./CarlaUE4.sh
 ```
-CARLA_ROOT is the root folder for CARLA
+CARLA_ROOT is the root folder for CARLA, write the 'CARLA_ROOT = $ROOT_PATH' in ~/.bashrc.
 
 ## Start ROS core service in a new terminal window
 ```bash
