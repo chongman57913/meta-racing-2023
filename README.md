@@ -27,17 +27,25 @@ sudo apt install ros-noetic-tf2-sensor-msgs ros-noetic-ackermann-msgs ros-noetic
 ```bash
 # Build all the projects in the repo
 
-cd ~/MoCAM_carla-ros-bridge/catkin_ws
+cd ~/meta-racing-2023/MoCAM_carla-ros-bridge/catkin_ws
 catkin_make && source devel/setup.bash
+or
+catkin_make && source devel/setup.zsh
 
-cd ~/MoCAM_pt2laserscan_ws
+cd ~/meta-racing-2023/MoCAM_pt2laserscan_ws
 catkin_make && source devel/setup.bash
+or
+catkin_make && source devel/setup.zsh
 
-cd ~/MoCAM_yolodetect_ws
+cd ~/meta-racing-2023/MoCAM_yolodetect_ws
 catkin_make && source devel/setup.bash
+or
+catkin_make && source devel/setup.zsh
 
-cd ~/MoCAM_MPC_ROS_ws
+cd ~/meta-racing-2023/MoCAM_MPC_ROS_ws
 catkin_make && source devel/setup.bash
+or
+catkin_make && source devel/setup.zsh
 ```
 
 ## Load variable for ROS projects 
