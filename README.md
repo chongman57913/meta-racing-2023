@@ -66,7 +66,7 @@ source ~/MoCAM_yolodetect_ws/devel/setup.bash
 source ~/MoCAM_MPC_ROS_ws/devel/setup.bash
 
 # Configure the path of the CARLA map folder
-export CARLA_ROOT="/path/to/CARLA map/folder"
+export CARLA_ROOT="ROOT_PATH"
 ```
 
 ### Reload .bashrc 
