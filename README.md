@@ -114,7 +114,7 @@ roslaunch carla_ros_bridge run_car_sim_Town04.launch
 
 ## Run baseline demo (MPC control, Obstacle detector, YOLO v5 object detector)
 ```bash
-rosrun mpc_ros mpc_Town04_launch.py 
+rosrun mpc_ros mocam_racing_launch.py 
 ```
 
 ## Tips for debugging
@@ -152,7 +152,7 @@ python test_pedestrian.py (run the walker)
 ```
 python test_pedestrian.py (run the walker)
 python mpc_Pub.py (control the traffic_light)
-python time_recorder_with_mpc_Town04.py (run the time_recorder with MoCAM Demo together)
+python time_recorder_with_mocam_racing.py (run the time_recorder with MoCAM Demo together)
 python collision_counter_traffic_collision_evnt_Qt.py (run the collision_recorder for the wall collision event)
 python collision_recorder_traffic_light_Qt.py (run the collision_recorder for the wrong traffic rule event)
 python collision_recorder_walker_hurt_Qt.py (run the collision_recorder for the walker hurt event)
