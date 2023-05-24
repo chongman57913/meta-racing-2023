@@ -77,10 +77,10 @@ source ~/.bashrc
 ### Modify the model checkpoint path for Yolo object detector
 To obtain a pre-train checkpoint of YOLOv5, please check on [the official Github](https://github.com/ultralytics/yolov5).
 
-If you would like to train a YOLOv5 model by yourself, please refer to [this section](/MoCAM_yolodetect_ws/src/yolov5_ros/README.md#train-a-yolov5-model-in-mocam).
+If you would like to train a YOLOv5 model by yourself, please refer to [this section](/meta-racing-2023/MoCAM_yolodetect_ws/src/yolov5_ros/README.md#train-a-yolov5-model-in-mocam).
 
 ```xml
-<!-- Modify the setting in ~/MoCAM_yolodetect_ws/src/yolov5_ros/launch/yolov5.launch -->
+<!-- Modify the setting in ~/meta-racing-2023/MoCAM_yolodetect_ws/src/yolov5_ros/launch/yolov5.launch -->
 
 <arg name="weights" default="/your_yolov5_rospackage_folder/checkpoint_name.pt"/>
 ```
@@ -124,7 +124,7 @@ RVIZ is a ROS GUI that allows you to visualize a lot of information and helps de
 ```xml
 <!-- 
     The launch file is located at: 
-    ~/MoCAM_carla-ros-bridge/catkin_ws/src/ros-bridge/carla_ros_bridge/launch/run_car_sim_Town04.launch
+    ~/meta-racing-2023/MoCAM_carla-ros-bridge/catkin_ws/src/ros-bridge/carla_ros_bridge/launch/run_car_sim_Town04.launch
 -->
 
 <node name="rviz" pkg="rviz" type="rviz" args="-d $(find carla_ros_bridge)/rviz/mpc.rviz"/>
@@ -135,7 +135,7 @@ There is a built-in manual control for vehicles in CARLA. You can control your c
 ```xml
 <!-- 
     The launch file is located at: 
-    ~/MoCAM_carla-ros-bridge/catkin_ws/src/ros-bridge/carla_ros_bridge/launch/run_car_sim_Town04.launch
+    ~/meta-racing-2023/MoCAM_carla-ros-bridge/catkin_ws/src/ros-bridge/carla_ros_bridge/launch/run_car_sim_Town04.launch
 -->
 
   <include file="$(find carla_manual_control)/launch/carla_manual_control.launch" unless="$(arg auto_control)">
@@ -144,7 +144,8 @@ There is a built-in manual control for vehicles in CARLA. You can control your c
 ```
 
 ### Generate pedestrian and vehicle in CARLA world
-to be updated
+python test_pedestrian.py (run the walker)
+//to be updated
 
 
 ## Tools for evulation (update later)
