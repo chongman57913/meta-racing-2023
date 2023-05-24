@@ -93,21 +93,29 @@ cd $CARLA_ROOT
 CARLA_ROOT is the root folder for CARLA, write the 'CARLA_ROOT = $ROOT_PATH' in ~/.bashrc.
 
 ## Start ROS core service in a new terminal window
+roscore is a collection of nodes and programs that are pre-requisites of a ROS-based system. You must have a roscore running in order for ROS nodes to communicate.
+
 ```bash
 roscore
 ```
 
 ## Run a ROS service to convert 3D point cloud into a 2D laser scan
+Converts a 3D Point Cloud into a 2D laser scan. This is useful for making devices like the Kinect appear like a laser scanner for 2D-based algorithms
+
 ```bash
 roslaunch pointcloud_to_laserscan pt2_to_scan.launch
 ```
 
 ## Run a ROS service for object detection using Yolo v5
+Run the YOLOv5 object detection service in ROS. It will use the image from the vehicle and publish the results.
+
 ```bash
 roslaunch yolov5_ros yolov5.launch
 ```
 
 ## Add a vehicle entity in CARLA world
+Run the ROS service to add a vehicle into a CARLA world.  
+
 ```bash
 roslaunch carla_ros_bridge run_car_sim_mocam.launch
 ```
