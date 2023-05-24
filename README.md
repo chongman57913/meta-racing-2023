@@ -144,9 +144,10 @@ There is a built-in manual control for vehicles in CARLA. You can control your c
 ```
 
 ### Generate pedestrian and vehicle in CARLA world
+```
 python test_pedestrian.py (run the walker)
+```
 //to be updated
-
 
 ## Tools for evulation (update later)
 ```
