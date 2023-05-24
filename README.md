@@ -109,7 +109,7 @@ roslaunch yolov5_ros yolov5.launch
 
 ## Add a vehicle entity in CARLA world
 ```bash
-roslaunch carla_ros_bridge run_car_sim_Town04.launch
+roslaunch carla_ros_bridge run_car_sim_mocam.launch
 ```
 
 ## Run baseline demo (MPC control, Obstacle detector, YOLO v5 object detector)
@@ -124,7 +124,7 @@ RVIZ is a ROS GUI that allows you to visualize a lot of information and helps de
 ```xml
 <!-- 
     The launch file is located at: 
-    ~/meta-racing-2023/MoCAM_carla-ros-bridge/catkin_ws/src/ros-bridge/carla_ros_bridge/launch/run_car_sim_Town04.launch
+    ~/meta-racing-2023/MoCAM_carla-ros-bridge/catkin_ws/src/ros-bridge/carla_ros_bridge/launch/run_car_sim_mocam.launch
 -->
 
 <node name="rviz" pkg="rviz" type="rviz" args="-d $(find carla_ros_bridge)/rviz/mpc.rviz"/>
@@ -135,7 +135,7 @@ There is a built-in manual control for vehicles in CARLA. You can control your c
 ```xml
 <!-- 
     The launch file is located at: 
-    ~/meta-racing-2023/MoCAM_carla-ros-bridge/catkin_ws/src/ros-bridge/carla_ros_bridge/launch/run_car_sim_Town04.launch
+    ~/meta-racing-2023/MoCAM_carla-ros-bridge/catkin_ws/src/ros-bridge/carla_ros_bridge/launch/run_car_sim_mocam.launch
 -->
 
   <include file="$(find carla_manual_control)/launch/carla_manual_control.launch" unless="$(arg auto_control)">
