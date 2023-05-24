@@ -82,7 +82,7 @@ If you would like to train a YOLOv5 model by yourself, please refer to [this sec
 ```xml
 <!-- Modify the setting in ~/MoCAM_yolodetect_ws/src/yolov5_ros/launch/yolov5.launch -->
 
-<arg name="weights" default="/path/to/yolo_checkpoint_folder/checkpoint_name.pt"/>
+<arg name="weights" default="/your_yolov5_rospackage_folder/checkpoint_name.pt"/>
 ```
 
 ## Run Carla map
