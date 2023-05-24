@@ -58,12 +58,12 @@ vim ~/.bashrc
 ```bash
 # For ROS & Carla-ROS-Bridge
 source /opt/ros/noetic/setup.bash
-source ~/MoCAM_carla-ros-bridge/catkin_ws/devel/setup.bash
+source ~/meta-racing-2023/MoCAM_carla-ros-bridge/catkin_ws/devel/setup.bash
 
 # For MoCAM demo
-source ~/MoCAM_pt2laserscan_ws/devel/setup.bash
-source ~/MoCAM_yolodetect_ws/devel/setup.bash
-source ~/MoCAM_MPC_ROS_ws/devel/setup.bash
+source ~/meta-racing-2023/MoCAM_pt2laserscan_ws/devel/setup.bash
+source ~/meta-racing-2023/MoCAM_yolodetect_ws/devel/setup.bash
+source ~/meta-racing-2023/MoCAM_MPC_ROS_ws/devel/setup.bash
 
 # Configure the path of the CARLA map folder
 export CARLA_ROOT="ROOT_PATH"
