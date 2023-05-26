@@ -18,7 +18,7 @@ This is a repo of a autonomous driving beaseline in CARLA for the competition.
 ```bash
 pip install carla==0.9.13
 
-pip install transforms3d cvxpy opencv-python pandas Pillow requests torch torchvision seaborn matplotlib
+pip install transforms3d cvxpy opencv-python pandas Pillow requests torch torchvision seaborn matplotlib pyqt5
 
 sudo apt install ros-noetic-tf2-sensor-msgs ros-noetic-ackermann-msgs ros-noetic-derived-object-msgs  ros-noetic-vision-msgs
 ```
@@ -151,18 +151,20 @@ There is a built-in manual control for vehicles in CARLA. You can control your c
   </include>
 ```
 
-### Generate pedestrian and vehicle in CARLA world
-```
-python test_pedestrian.py (run the walker)
-```
-//to be updated
+### Change of road conditions in CARLA world
+To test the algorithm in different road conditions, we implement a script to add pedestrian, vehicle, other blueprint object and traffic light control in the CARLA world.
+```bash
+cd MoCAM_evaluation_tools
 
-## Tools for evulation (update later)
+python test_pedestrian.py # add pedestrain and blueprint object
+python mpc_Pub.py #control the traffic light signal
 ```
-python test_pedestrian.py (run the walker)
-python mpc_Pub.py (control the traffic_light)
-python time_recorder_with_mocam_racing.py (run the time_recorder with MoCAM Demo together)
-python collision_counter_traffic_collision_evnt_Qt.py (run the collision_recorder for the wall collision event)
-python collision_recorder_traffic_light_Qt.py (run the collision_recorder for the wrong traffic rule event)
-python collision_recorder_walker_hurt_Qt.py (run the collision_recorder for the walker hurt event)
+
+### Collision detector for the competition
+We also implement the collision counter to review and evaluate the autonomous driving performance. 
+```bash
+python time_recorder_with_mocam_racing.py # timer
+python collision_counter_traffic_collision_evnt_Qt.py # wall collision
+python collision_recorder_traffic_light_Qt.py # run a red light
+python collision_recorder_walker_hurt_Qt.py # crash with pedestrian
 ```
