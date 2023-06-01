@@ -46,6 +46,8 @@ cd ~/meta-racing-2023/MoCAM_MPC_ROS_ws
 catkin_make && source devel/setup.bash
 or
 catkin_make && source devel/setup.zsh
+
+chmod +x ~/meta-racing-2023/MoCAM_MPC_ROS_ws/src/mpc-ros/src/mocam_racing_launch.py
 ```
 
 ## Load variable for ROS projects 
@@ -155,6 +157,7 @@ There is a built-in manual control for vehicles in CARLA. You can control your c
 To test the algorithm in different road conditions, we implement a script to add pedestrian, vehicle, other blueprint object and traffic light control in the CARLA world.
 ```bash
 cd MoCAM_evaluation_tools
+chmod +x *.py
 
 python test_pedestrian.py # add pedestrain and blueprint object
 python mpc_Pub.py #control the traffic light signal
