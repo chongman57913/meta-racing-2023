@@ -31,6 +31,8 @@ class mpc_path_tracking:
         self.gear = 0 # 0 forward   1 backward
         self.speed_flag = 1 # 1 forward -1 backward
 
+        self.flag = False
+
     def controller(self, car_state, ref_path, iter_num=5, debug=False, **kwargs):
 
         # car_state: x, y, theta, 3*1
@@ -39,14 +41,14 @@ class mpc_path_tracking:
         
         assert car_state.shape == (3, 1)
 
-        flag = False
+        self.flag = False
 
         # if self.cur_ind == 0:
         min_dis, self.cur_ind = self.closest_point(car_state, ref_path, self.cur_ind, **kwargs)
         
         if self.cur_ind == len(ref_path) - 1:
             self.ref_speed = 0
-            flag = True
+            self.flag = True
             print('arrive at the goal')
 
         u_opt_array, state_pre, ref_traj = self.iterative_solver(car_state, ref_path, self.cur_vel_array, iter_num=iter_num, **kwargs)
